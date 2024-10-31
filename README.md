@@ -1,8 +1,7 @@
 # TDS_Project_1
-# TDS_Project_1
 ## Data
 The script `githubapi.py` collects raw data using the [GitHub API](https://docs.github.com/en/rest?apiVersion=2022-11-28) and searches for users located in **Beijing** with more than **500** followers and iterated through up to 50 pages to compile a list of users. The parameters can be changed by editing the python dictionary `params`.
-```python
+```
 search_url = 'https://api.github.com/search/users'
 
 params = {
