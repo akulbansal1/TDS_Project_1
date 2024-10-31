@@ -1,4 +1,9 @@
+- I used GitHub API to query data from GitHub on users (and their 500 latest repositories) in Beijing with more than 500 followers.
+-	Even though the most popular language (when looked at the entire dataset) is by a wide margin Jinja, further investigation reveals other languages are also just as popular.
+-	Developers could look at which languages are the most popular in practice but are not very popular on GitHub and create projects in those languages.
+
 # TDS_Project_1
+Quiz ID: Beijing:500
 ## Data
 The script `githubapi.py` collects raw data using the [GitHub API](https://docs.github.com/en/rest?apiVersion=2022-11-28) and searches for users located in **Beijing** with more than **500** followers and iterated through up to 50 pages to compile a list of users. The parameters can be changed by editing the python dictionary `params`.
 ```python
@@ -204,5 +209,6 @@ pop_lang_data.groupby(['year_created','language']).mean().sort_values(by=['langu
 
 Even though Jinja is the most popular language (among the top contributors in Beijing) based on average `stargazers_count`, all the repositories that use *Jinja* were, surprisingly, only created in 2020. On the other hand, other languages like *Tex*, *Lex*, *Solidity* have been used for longer periods and also have more consistency in being placed high on average stargazers_count. In fact, *Tex* even has the highest average stargazers_count when looked at on a 'per year' basis, which was otherwise hidden if the data is looked at in aggregate.
 
-## Further Recommendation
+## Recommendation
+Looking at the popularity of each language on GitHub and the general popularity of those languages in the industry, developers could create repositories in the languages that are widely used in practice but are not very popular on GitHub. Doing this will provide help to a lot of other developers who might be just starting to use those languages. A good way to start is to look at existing popular projects in the most popular language and then replicate those projects in other languages.
 A straightforward extension of the analysis is if the reader relaxes the search criteria. Since we are only looking at the data of the most popular contributors **today**, the data has a 'survivorship bias' due to the simple fact that the popular contributors today will not be the same as the popular contributors two, three, etc. years ago. The search criteria could be relaxed. Unfortunately, GitHub API does not support point-in-time data querying. A possible workaround is to filter the users by relaxing the minimum followers to 'greater than 50'. Another workaround could be using [GitHub Archive](https://www.gharchive.org/) to query point-in-time data.
