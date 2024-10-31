@@ -9,7 +9,7 @@ params = {
     'page': 1
 }
 
-TOKEN = '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'
+TOKEN = 'INSERT_TOKEN_HERE'
 HEADERS = {'Authorization': f'token {TOKEN}'}
 
 
